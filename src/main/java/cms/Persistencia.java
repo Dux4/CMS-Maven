@@ -6,6 +6,6 @@ public interface Persistencia<T> {
 
     void save(T entidade);
     void update(T entidade);
-    List<T> list();
+    void list();
     boolean remove(int id);
 }

@@ -2,27 +2,32 @@ package cms;
 
 import java.util.List;
 
+import java.util.List;
+
 public class ServiceContent {
+    private Persistencia<Content> persistencia;
 
-    private Persistencia<Content> p;
-
-    public ServiceContent(Persistencia<Content> p) {
-        this.p = p;
+    public ServiceContent(Persistencia<Content> persistencia) {
+        this.persistencia = persistencia;
     }
 
-    public void save(Content cnt){
-        p.save(cnt);
+    public void save(Content content) {
+        persistencia.save(content);
     }
 
-    public void updateContent (Integer id, String titulo, String texto, User autor){
-        p.update(new Content(id, titulo, texto, autor));
+//    public List<Content> listContent() {
+//        return persistencia.list();
+//    }
+    
+    public void listContent() {
+        persistencia.list();  // Chama o método list() da persistência
     }
 
-    public List<Content> listContent(){
-        return p.list();
+    public void updateContent(Content content) {
+        persistencia.update(content);
     }
 
-    public boolean removeContent(int id){
-        return p.remove(id);
+    public boolean removeContent(int id) {
+        return persistencia.remove(id);
     }
 }

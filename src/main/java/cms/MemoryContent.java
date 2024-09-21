@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ListContent implements Persistencia<Content>{
+public class MemoryContent implements Persistencia<Content>{
 
     protected List<Content> cnt = new ArrayList<>();
     private Integer i=1;
@@ -25,11 +25,21 @@ public class ListContent implements Persistencia<Content>{
             }
         }
     }
-
+    
     @Override
-    public List<Content> list(){
-        return Collections.unmodifiableList(cnt);
+    public void list() {
+        for (Content content : cnt) {
+            System.out.println("ID: " + content.getId() + ", Título: " + content.getTitulo() + ", Descrição: " + content.getTexto());
+        }
     }
+
+
+//    @Override
+//    public List<Content> list(){
+//        return Collections.unmodifiableList(cnt);
+//    }
+    
+    
 
     @Override
     public boolean remove(int id){
