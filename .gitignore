@@ -13,6 +13,11 @@
 *.war
 *.ear
 
+# Banco de dados
+meubanco.lck
+meubanco.script
+
+
 # Log files
 *.log
 
