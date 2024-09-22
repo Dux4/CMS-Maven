@@ -15,10 +15,7 @@ public class ServiceContent {
         persistencia.save(content);
     }
 
-//    public List<Content> listContent() {
-//        return persistencia.list();
-//    }
-    
+  
     public void listContent() {
         persistencia.list();  // Chama o método list() da persistência
     }
